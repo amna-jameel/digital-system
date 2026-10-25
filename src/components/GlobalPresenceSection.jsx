@@ -1,26 +1,55 @@
 import React, { useState } from 'react';
-import { MapPin, Globe, Building2, Phone, Mail, ArrowRight, CheckCircle2 } from 'lucide-react';
+import { MapPin, Globe, Building2, Phone, Mail, ArrowRight, CheckCircle2, ExternalLink, Navigation } from 'lucide-react';
 import { GLOBAL_REGIONS } from '../data/companyData';
 import './GlobalPresenceSection.css';
 
 export default function GlobalPresenceSection({ onSelectCountry }) {
-  const [activeRegionId, setActiveRegionId] = useState('saudi-arabia');
+  const [activeRegionId, setActiveRegionId] = useState('dubai');
+  const [mapZoom, setMapZoom] = useState('local'); // 'local' or 'corridor'
 
-  const selectedRegion = GLOBAL_REGIONS.find(r => r.id === activeRegionId) || GLOBAL_REGIONS[1];
+  const selectedRegion = GLOBAL_REGIONS.find(r => r.id === activeRegionId) || GLOBAL_REGIONS[2];
 
-  // Coordinates mapping for understated map visualization
-  const pinPositions = {
-    'pakistan': { top: '48%', left: '72%' },
-    'saudi-arabia': { top: '50%', left: '58%' },
-    'dubai': { top: '51%', left: '62%' },
-    'oman': { top: '53%', left: '64%' }
+  const regionLocations = {
+    'dubai': {
+      query: 'Nesto Building, Muteena Road, Deira, Dubai, UAE',
+      localZoom: 14,
+      label: 'Dubai Headquarters'
+    },
+    'saudi-arabia': {
+      query: 'Abi Abdulla Building, Bin Laden Street, Al Rawabi, Jeddah, Saudi Arabia',
+      localZoom: 13,
+      label: 'Saudi Arabia Office'
+    },
+    'pakistan-lahore': {
+      query: 'Shamim Building, Jail Road, Lahore, Pakistan',
+      localZoom: 14,
+      label: 'Lahore Regional Hub'
+    },
+    'pakistan-ryk': {
+      query: 'Abu-Dhabi Road, Rahim Yar Khan, Pakistan',
+      localZoom: 14,
+      label: 'Rahim Yar Khan Hub'
+    },
+    'oman': {
+      query: 'Majan Building, Ghala, Muscat, Sultanate of Oman',
+      localZoom: 13,
+      label: 'Oman Operations'
+    }
   };
+
+  const currentLoc = regionLocations[activeRegionId] || regionLocations['dubai'];
+  const zoomLevel = mapZoom === 'corridor' ? 5 : currentLoc.localZoom;
+  const mapEmbedUrl = `https://maps.google.com/maps?q=${encodeURIComponent(currentLoc.query)}&t=m&z=${zoomLevel}&ie=UTF8&iwloc=&output=embed`;
+  const externalMapLink = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(currentLoc.query)}`;
 
   return (
     <section id="global-presence" className="global-presence-section">
       <div className="container">
         {/* Section Header */}
         <div className="section-header center-header">
+          <span className="eyebrow">
+            <span className="eyebrow-dot"></span> LIVE SATELLITE & REGIONAL TELEMETRY
+          </span>
           <h2 className="section-title">Technology Across Regions</h2>
           <p className="section-subtitle">
             Delivering localized systems engineering, installation, and 24/7 technical operations across 5 primary operational hubs.
@@ -28,39 +57,60 @@ export default function GlobalPresenceSection({ onSelectCountry }) {
         </div>
 
         <div className="presence-grid">
-          {/* Left Column: Interactive World & Regional Map Canvas */}
+          {/* Left Column: Interactive Original Real Map Canvas */}
           <div className="map-canvas-container">
-            <div className="understated-map-bg">
-              {/* World Continent Vector Illustration Layer */}
-              <svg className="map-svg-vector" viewBox="0 0 1000 500" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-                <path fill="#334155" d="M150,120 Q200,80 300,100 Q350,150 280,220 Q200,250 120,200 Z" />
-                <path fill="#334155" d="M450,100 Q520,80 600,120 Q620,200 550,260 Q480,220 440,160 Z" />
-                <path fill="#334155" d="M600,140 Q700,100 850,120 Q900,220 800,300 Q700,280 620,220 Z" />
-                <path fill="#334155" d="M500,280 Q560,260 620,320 Q580,420 520,400 Q480,340 500,280 Z" />
-                <path fill="#334155" d="M780,300 Q860,280 920,340 Q880,420 800,380 Z" />
-              </svg>
+            <div className="real-map-container">
+              {/* Actual Live Map Iframe */}
+              <iframe
+                title={`Map of ${selectedRegion.name}`}
+                className="real-map-iframe"
+                src={mapEmbedUrl}
+                loading="lazy"
+                allowFullScreen
+              ></iframe>
 
-              <div className="map-grid-overlay"></div>
+              {/* Status Header Overlay */}
+              <div className="map-overlay-header">
+                <div className="map-live-pill">
+                  <span className="live-ping"></span>
+                  <span className="live-text">ONLINE GPS: {selectedRegion.name.toUpperCase()}</span>
+                </div>
 
-              {/* Regional Location Pins */}
-              {GLOBAL_REGIONS.map((region) => {
-                const pos = pinPositions[region.id] || { top: '50%', left: '50%' };
-                const isSelected = activeRegionId === region.id;
-
-                return (
+                <div className="map-view-toggle">
                   <button
-                    key={region.id}
                     type="button"
-                    className={`map-location-pin ${isSelected ? 'is-active' : ''}`}
-                    style={{ top: pos.top, left: pos.left }}
-                    onClick={() => setActiveRegionId(region.id)}
-                    title={`Focus ${region.name}`}
+                    className={`view-toggle-btn ${mapZoom === 'local' ? 'active' : ''}`}
+                    onClick={() => setMapZoom('local')}
                   >
-                    <span className="pin-dot"></span>
-                    <span className="pin-tooltip">{region.flag} {region.name}</span>
+                    City Hub
                   </button>
-                );
-              })}
+                  <button
+                    type="button"
+                    className={`view-toggle-btn ${mapZoom === 'corridor' ? 'active' : ''}`}
+                    onClick={() => setMapZoom('corridor')}
+                  >
+                    Corridor
+                  </button>
+                </div>
+              </div>
+
+              {/* Address Banner Overlay */}
+              <div className="map-address-banner">
+                <div className="address-meta">
+                  <MapPin size={15} className="accent-icon" />
+                  <span className="address-text">{selectedRegion.address}</span>
+                </div>
+                <a 
+                  href={externalMapLink} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="external-map-btn"
+                  title="Open in Google Maps"
+                >
+                  <span>Directions</span>
+                  <ExternalLink size={12} />
+                </a>
+              </div>
             </div>
 
             {/* Country Selector Pills */}

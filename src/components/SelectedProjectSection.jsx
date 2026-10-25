@@ -115,26 +115,38 @@ export default function SelectedProjectSection({ onSelectProject }) {
           <div className="achievements-grid">
             {filteredAchievements.map((item, idx) => (
               <div key={idx} className="achievement-card">
-                <div className="achieve-card-header">
-                  <span className="achieve-category">{item.category}</span>
-                  <div className="achieve-location">
-                    <MapPin size={12} className="accent-icon" />
+                {item.image && (
+                  <div className="achieve-img-container">
+                    <img 
+                      src={item.image} 
+                      alt={item.title} 
+                      className="achieve-photo"
+                      loading="lazy"
+                    />
+                    <div className="achieve-img-overlay"></div>
+                    <span className="achieve-category-badge">{item.category}</span>
+                  </div>
+                )}
+
+                <div className="achieve-content">
+                  <div className="achieve-location-row">
+                    <MapPin size={13} className="accent-icon" />
                     <span>{item.location}</span>
                   </div>
-                </div>
 
-                <h4 className="achieve-title">{item.title}</h4>
-                <p className="achieve-desc">{item.desc}</p>
+                  <h4 className="achieve-title">{item.title}</h4>
+                  <p className="achieve-desc">{item.desc}</p>
 
-                <div className="achieve-card-footer">
-                  <button 
-                    type="button" 
-                    className="achieve-btn"
-                    onClick={onSelectProject}
-                  >
-                    <span>View Project Scope</span>
-                    <ExternalLink size={12} />
-                  </button>
+                  <div className="achieve-card-footer">
+                    <button 
+                      type="button" 
+                      className="achieve-btn"
+                      onClick={onSelectProject}
+                    >
+                      <span>View Project Scope</span>
+                      <ExternalLink size={12} />
+                    </button>
+                  </div>
                 </div>
               </div>
             ))}

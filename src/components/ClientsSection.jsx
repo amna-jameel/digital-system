@@ -29,10 +29,6 @@ export default function ClientsSection() {
                   loading="lazy" 
                 />
                 <div className="client-img-overlay"></div>
-                <div className="client-badge-pill">
-                  <Building2 size={12} className="accent-icon" />
-                  <span>Deployment</span>
-                </div>
               </div>
               <div className="client-info">
                 <h3 className="client-name">{client.name}</h3>

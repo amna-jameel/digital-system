@@ -231,54 +231,63 @@ export const MAJOR_ACHIEVEMENTS = [
     title: 'Centaurus Islamabad',
     category: 'Consultant & Smart Services',
     location: 'Islamabad, Pakistan',
+    image: centaurusImg,
     desc: 'Provided comprehensive consulting and smart building services integration for Islamabad’s premier landmark mixed-use complex (Mega Mall, Residencia & Corporate Tower).'
   },
   {
     title: 'MAG 218 & MAG 214 Towers',
     category: 'CCTV & Smart Parking',
     location: 'Dubai Marina & JLT, UAE',
+    image: magImg,
     desc: 'Turnkey deployment of high-definition IP CCTV surveillance, automatic number plate recognition (ANPR), and automated smart parking management systems across luxury Dubai residential towers.'
   },
   {
     title: 'King Edward Medical University',
     category: 'Smart Audio Visual Infrastructure',
     location: 'Lahore, Pakistan',
+    image: kingEdwardImg,
     desc: 'Engineered comprehensive smart audio-visual systems design, auditorium video production services, and campus-wide AV repairs inaugurated by the Governor of Punjab.'
   },
   {
     title: 'Palm Views East Jumeirah',
     category: 'ELV AMC Project',
     location: 'Palm Jumeirah, Dubai',
+    image: palmViewsImg,
     desc: 'Annual Maintenance Contract and systems engineering for extra-low voltage (ELV) infrastructure, access control, and security surveillance in Palm Jumeirah luxury waterfront residences.'
   },
   {
     title: 'Ibn Battuta Building & Mall',
     category: 'CCTV & Smart Hotel Project',
     location: 'Dubai, UAE',
+    image: ibnBattutaImg,
     desc: 'Implementation of high-density CCTV surveillance, access management, and integrated hotel technology infrastructure for commercial and hospitality operations.'
   },
   {
     title: 'Aries Tower Business Avenue',
     category: 'Smart Green Apartments (H&H Builders)',
     location: 'Corporate Commercial Corridor',
+    image: ariesTowerImg,
     desc: 'Integrated smart green apartment automation, energy monitoring, and building access control for upscale corporate and residential suites.'
   },
   {
     title: 'Badra Community',
     category: 'Smart Water Management Project',
     location: 'Dubai, UAE',
+    image: badraImg,
     desc: 'Automated telemetry and smart water distribution monitoring system ensuring conservation, leak detection, and uninterrupted community water management.'
   },
   {
     title: 'HEC Smart & Secure Campuses',
     category: 'Higher Education Commission Projects',
     location: 'Faisalabad, Karachi, Kotli & Quetta',
+    image: gcUniversityImg,
     desc: 'Turnkey smart and secure campus infrastructure for GC University Faisalabad, Jinnah Sindh Medical University Karachi, Kotli University Kotli, and University of Balochistan Quetta.'
   },
   {
     title: 'OSN & Etisalat UAE',
     category: 'Broadcast & Satellite Installation',
     location: 'Dubai & UAE Regional',
+    image: osnEtisalatImg,
     desc: 'High-reliability satellite communications, network distribution, and broadcast receiver installation project for Orbit Showtime Network and Etisalat.'
   }
 ];
