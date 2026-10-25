@@ -4,7 +4,7 @@ import './PartnersSection.css';
 
 export default function PartnersSection() {
   const partners = [
-    { name: 'Hardware & Sensor Ecosystem', tag: 'Certified Integration', desc: 'Enterprise OEM cameras, turnstiles, thermal sensors & BACnet controllers.', icon: Cpu },
+    { name: 'Hardware & Sensor Ecosystem', tag: 'Certified Integration', desc: 'Enterprise OEM cameras, turnstiles, Metrisys analytics & BACnet controllers.', icon: Cpu },
     { name: 'AI & Cloud Infrastructure', tag: 'Strategic Alliance', desc: 'Low-latency RTSP streaming & GPU edge compute node processing.', icon: Network },
     { name: 'Global Tech Distributors', tag: 'Regional Logistics', desc: 'Direct supply chain partners across Pakistan, KSA, Dubai & Oman.', icon: Globe },
     { name: 'Security & Telecom Standards', tag: 'ISO Certified', desc: 'Compliant with Middle East & South Asia security standards.', icon: ShieldCheck }

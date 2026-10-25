@@ -4,7 +4,7 @@ import './SecuritySection.css';
 
 export default function SecuritySection({ onSelectSolution }) {
   const securityPillars = [
-    { title: 'CCTV Infrastructure', icon: Camera, desc: 'High-definition 4K optics with thermal capability' },
+    { title: 'CCTV Infrastructure', icon: Camera, desc: 'High-definition 4K optics with Metrisys AI capability' },
     { title: 'Access Control', icon: KeyRound, desc: 'Biometric, RFID, and mobile credentials' },
     { title: 'Perimeter Monitoring', icon: MonitorCheck, desc: 'Radar & LiDAR intrusion detection' },
     { title: 'Intelligent Surveillance', icon: Shield, desc: 'AI-assisted threat detection' },

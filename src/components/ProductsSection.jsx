@@ -14,10 +14,10 @@ export default function ProductsSection({ onSelectProduct }) {
       image: '/images/smart_switch_wall.jpg'
     },
     {
-      id: 'sunell-ai-thermal',
-      name: 'Sunell AI Thermal & Accurate Human Detection Camera',
+      id: 'sunell-ai-metrisys',
+      name: 'Sunell & Metrisys AI Human Detection Camera',
       category: 'surveillance',
-      desc: 'High-precision dual-spectrum thermal camera with AI perimeter protection, intrusion alarm & AI-FIRE flame tracking.',
+      desc: 'High-precision dual-spectrum camera with Metrisys AI perimeter protection, intrusion alarm & AI-FIRE flame tracking.',
       image: '/images/ai_control.jpg'
     },
     {
@@ -74,7 +74,7 @@ export default function ProductsSection({ onSelectProduct }) {
   const categories = [
     { id: 'all', label: 'All Equipment' },
     { id: 'automation', label: 'Smart Home & KNX' },
-    { id: 'surveillance', label: 'AI & Thermal CCTV' },
+    { id: 'surveillance', label: 'AI & Metrisys CCTV' },
     { id: 'ai-hardware', label: 'Edge AI & Satellite' },
     { id: 'traffic', label: 'ANPR & Barriers' },
     { id: 'access', label: 'Access & UVIS' },

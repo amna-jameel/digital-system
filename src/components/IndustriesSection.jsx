@@ -5,7 +5,7 @@ import './IndustriesSection.css';
 export default function IndustriesSection() {
   const industries = [
     { title: 'Residential & Smart Villas', icon: Home, desc: 'Luxury KNX automation, GVS glass touch panels, circadian lighting & whole-home security.' },
-    { title: 'Oil & Gas Sector', icon: Factory, desc: 'Predictive pipeline maintenance, remote hazardous zone AI surveillance & thermal monitoring.' },
+    { title: 'Oil & Gas Sector', icon: Factory, desc: 'Predictive pipeline maintenance, remote hazardous zone AI surveillance & Metrisys video monitoring.' },
     { title: 'Higher Education & Campuses', icon: GraduationCap, desc: 'HEC Smart & Secure Campuses (GC University, King Edward Medical, JSMU, Kotli & Balochistan).' },
     { title: 'Healthcare & Smart Hospitals', icon: Stethoscope, desc: 'Clean-room access control, patient telemetry, Metrisys AI Video Analytics & hospital AV networks.' },
     { title: 'Commercial Towers & Malls', icon: Building2, desc: 'Centaurus Islamabad, MAG Towers Dubai, Aries Tower & integrated retail BMS control.' },

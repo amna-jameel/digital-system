@@ -132,7 +132,7 @@ export const TECHNOLOGY_SOLUTIONS = [
     shortDesc: 'Convert existing CCTV networks into intelligent monitoring hubs utilizing Metrisys AI Video Analytics technology.',
     fullDesc: 'Unique Smart Solutions deploys Metrisys AI Video Analytics to transform standard video streams into proactive operational intelligence. Advanced computer vision algorithms analyze monitored spaces, detect perimeter breaches, track objects, and alert on critical events in real time.',
     capabilities: [
-      'Sunell AI Thermal Human & Vehicle Detection',
+      'Metrisys AI Human & Vehicle Detection',
       '64-Channel 16 PoE 4K NVR with Edge AI',
       'Face Detection & Guest Recognition',
       'Loitering, Line Crossing & Intrusion Alarms',
@@ -313,7 +313,7 @@ export const COMPANY_PROFILE_STATS = {
   tagline: 'Unique Smart Solutions & Global Technology Partners',
   subtext: 'We Invest In The Future — Unique, Future, Smart',
   pillars: [
-    { title: 'AI & Automation', desc: 'Self-learning computer vision, Sunell thermal AI, and automated robotics.' },
+    { title: 'AI & Automation', desc: 'Self-learning computer vision, Metrisys AI video analytics, and automated robotics.' },
     { title: 'One Fiber Backbone', desc: '14 integrated systems delivered over a single fiber optic cable.' },
     { title: 'KNX & GVS Partnership', desc: '25-year manufacturer excellence in smart touch panels & residential IoT.' }
   ]
@@ -321,7 +321,7 @@ export const COMPANY_PROFILE_STATS = {
 
 export const ECOSYSTEM_FLOW = [
   { step: '01', title: 'ONE FIBER BACKBONE', desc: 'Consolidating Triple Play, CCTV, intercom, and building controls over a single optical link.' },
-  { step: '02', title: 'AI VIDEO SURVEILLANCE', desc: 'Sunell thermal/optical cameras with Edge AI human detection and AI-FIRE flame tracking.' },
+  { step: '02', title: 'AI VIDEO SURVEILLANCE', desc: 'High-definition cameras with Metrisys Edge AI human detection and AI-FIRE flame tracking.' },
   { step: '03', title: 'SMART HOME & BUILDINGS', desc: 'GVS KNX touch panels, Tuya Zigbee 3.0, and whole-villa circadian climate orchestration.' },
   { step: '04', title: 'BIOMETRICS & UVIS', desc: 'Face recognition speed gates, video door phones, and under-vehicle security scanning.' },
   { step: '05', title: 'ANPR & PARKING GUIDANCE', desc: 'Deep learning license plate recognition, automated barrier control, and slot reservation.' },
