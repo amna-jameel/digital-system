@@ -5,6 +5,18 @@ import {
 } from 'lucide-react';
 import './AiFeatureSection.css';
 
+// 10 Algorithm Authentic Operational Photos from assets
+import intrusionImg from '../assets/Person_crosses_industrial_facili…_20261025221013.jpg';
+import loiteringImg from '../assets/Visitor_standing_in_service_corr…_20261025221031.jpg';
+import crowdImg from '../assets/Shoppers_gathering_at_mall_entrance_20261025221042.jpg';
+import fallImg from '../assets/Employee_falls_in_office_corridor_20261025221045.jpg';
+import faceImg from '../assets/Visitor_approaches_office_buildi…_20261025221106.jpg';
+import peopleFlowImg from '../assets/Shoppers_entering_and_exiting_su…_20261025221130.jpg';
+import anprImg from '../assets/Vehicle_approaching_parking_entr…_20261025221157.jpg';
+import vehicleClassImg from '../assets/SUV_driving_past_camera_20261025221204.jpg';
+import flameSmokeImg from '../assets/Small_fire_safety_demonstration_20261025221224.jpg';
+import safetyEquipImg from '../assets/Workers_walking_in_warehouse_20261025221242.jpg';
+
 export default function AiFeatureSection({ onSelectSolution }) {
   const [activeOverlayMode, setActiveOverlayMode] = useState('all');
 
@@ -22,62 +34,72 @@ export default function AiFeatureSection({ onSelectSolution }) {
     {
       id: 'area-intrusion',
       title: 'Area Intrusion Detection',
-      desc: 'Detects unauthorized targets entering or crossing predefined perimeter boundaries in real time.',
-      icon: ShieldAlert
+      desc: 'Detects unauthorized entry across defined perimeter zones in real time.',
+      icon: ShieldAlert,
+      image: intrusionImg
     },
     {
       id: 'loitering',
       title: 'Loitering Detection',
-      desc: 'Monitors designated sensitive zones and alerts when individuals remain longer than a specified duration.',
-      icon: Clock
+      desc: 'Alerts when individuals remain in sensitive zones past specified time limits.',
+      icon: Clock,
+      image: loiteringImg
     },
     {
       id: 'crowd-gathering',
       title: 'Crowd Gathering Detection',
-      desc: 'Analyzes human density and generates notifications when crowd concentration exceeds defined safety limits.',
-      icon: Users
+      desc: 'Notifies security when crowd density exceeds safe capacity thresholds.',
+      icon: Users,
+      image: crowdImg
     },
     {
       id: 'fall-detection',
       title: 'Fall Detection',
-      desc: 'Identifies rapid human posture changes indicative of falls to enable immediate emergency assistance.',
-      icon: Activity
+      desc: 'Identifies sudden human posture collapse for immediate emergency response.',
+      icon: Activity,
+      image: fallImg
     },
     {
       id: 'face-recognition',
       title: 'Face Capture & Recognition',
-      desc: 'Extracts facial features and matches against authorized databases for access verification and monitoring.',
-      icon: ScanFace
+      desc: 'Captures facial attributes and checks against authorized databases.',
+      icon: ScanFace,
+      image: faceImg
     },
     {
       id: 'people-flow',
       title: 'People Flow Statistics',
-      desc: 'Measures bidirectional foot traffic, entry/exit volumes, and occupancy levels across designated areas.',
-      icon: BarChart3
+      desc: 'Measures bidirectional foot traffic and area occupancy counts.',
+      icon: BarChart3,
+      image: peopleFlowImg
     },
     {
       id: 'anpr',
       title: 'License Plate Recognition (ANPR)',
-      desc: 'Automatically captures vehicle registration numbers for automated gate barriers and parking control.',
-      icon: Car
+      desc: 'Automatically reads vehicle license plates for barrier and gate control.',
+      icon: Car,
+      image: anprImg
     },
     {
       id: 'vehicle-classification',
       title: 'Vehicle Brand & Model Recognition',
-      desc: 'Classifies vehicle make, model, type, and color attributes to assist in traffic management and surveillance.',
-      icon: Truck
+      desc: 'Classifies vehicle make, model, type, and color attributes.',
+      icon: Truck,
+      image: vehicleClassImg
     },
     {
       id: 'flame-smoke',
       title: 'Smoke & Open Flame Detection',
-      desc: 'Continuously analyzes video frames for early visual indicators of smoke plumes and open flame patterns.',
-      icon: Flame
+      desc: 'Identifies early visual signs of smoke plumes and open flame patterns.',
+      icon: Flame,
+      image: flameSmokeImg
     },
     {
       id: 'safety-equipment',
       title: 'Safety Equipment Detection',
-      desc: 'Monitors work zones to verify compliance with required safety gear such as helmets and high-visibility vests.',
-      icon: HardHat
+      desc: 'Verifies compliance with required safety helmets and protective vests.',
+      icon: HardHat,
+      image: safetyEquipImg
     }
   ];
 
@@ -168,7 +190,7 @@ export default function AiFeatureSection({ onSelectSolution }) {
           </div>
         </div>
 
-        {/* 10 Key AI Video Analytics Algorithms Showcase */}
+        {/* 10 Key AI Video Analytics Algorithms Showcase - 3 Cards per Line */}
         <div className="algorithms-showcase-section">
           <div className="algorithms-header">
             <div className="algorithms-header-left">
@@ -191,14 +213,24 @@ export default function AiFeatureSection({ onSelectSolution }) {
               const Icon = algo.icon;
               return (
                 <div key={algo.id} className="algorithm-card">
-                  <div className="algo-card-top">
-                    <div className="algo-icon-wrap">
-                      <Icon size={18} className="algo-icon" />
-                    </div>
-                    <span className="algo-index">{idx + 1 < 10 ? `0${idx + 1}` : idx + 1}</span>
+                  <div className="algo-image-wrap">
+                    <img 
+                      src={algo.image} 
+                      alt={algo.title} 
+                      className="algo-img" 
+                      loading="lazy"
+                    />
+                    <span className="algo-index-tag">
+                      {idx + 1 < 10 ? `0${idx + 1}` : idx + 1}
+                    </span>
                   </div>
-                  <h4 className="algo-title">{algo.title}</h4>
-                  <p className="algo-desc">{algo.desc}</p>
+                  <div className="algo-body">
+                    <div className="algo-title-row">
+                      <Icon size={16} className="algo-icon" />
+                      <h4 className="algo-title">{algo.title}</h4>
+                    </div>
+                    <p className="algo-desc">{algo.desc}</p>
+                  </div>
                 </div>
               );
             })}
