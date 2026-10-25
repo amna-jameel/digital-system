@@ -57,8 +57,26 @@ export default function GlobalPresenceSection({ onSelectCountry }) {
           </span>
           <h2 className="section-title">Technology Across Regions</h2>
           <p className="section-subtitle">
-            Delivering localized systems engineering, installation, and 24/7 technical operations across 5 primary operational hubs.
+            Delivering localized systems engineering, installation, and 24/7 technical operations across 6 operational hubs.
           </p>
+
+          {/* Country Selector Buttons in One Line Below Subheading */}
+          <div className="country-selector-bar">
+            {GLOBAL_REGIONS.map((region) => {
+              const isSelected = activeRegionId === region.id;
+              return (
+                <button
+                  key={region.id}
+                  type="button"
+                  className={`country-nav-tab ${isSelected ? 'is-active' : ''}`}
+                  onClick={() => setActiveRegionId(region.id)}
+                >
+                  <span className="tab-flag">{region.flag}</span>
+                  <span>{region.name}</span>
+                </button>
+              );
+            })}
+          </div>
         </div>
 
         <div className="presence-grid">
@@ -116,36 +134,6 @@ export default function GlobalPresenceSection({ onSelectCountry }) {
                   <ExternalLink size={12} />
                 </a>
               </div>
-            </div>
-
-            {/* Country Selector Pills */}
-            <div className="country-selector-bar">
-              {GLOBAL_REGIONS.map((region) => {
-                const isSelected = activeRegionId === region.id;
-                return (
-                  <button
-                    key={region.id}
-                    type="button"
-                    className={`country-nav-tab ${isSelected ? 'is-active' : ''}`}
-                    onClick={() => setActiveRegionId(region.id)}
-                  >
-                    <span className="tab-flag">{region.flag}</span>
-                    <span>{region.name}</span>
-                  </button>
-                );
-              })}
-            </div>
-
-            {/* Mobile Direct Action Button: Immediately accessible on phone without scrolling down */}
-            <div className="mobile-dossier-action-bar">
-              <button
-                type="button"
-                className="btn btn-primary full-width mobile-dossier-btn"
-                onClick={() => onSelectCountry(selectedRegion.slug)}
-              >
-                <span>View {selectedRegion.name} Office Dossier</span>
-                <ArrowRight size={15} />
-              </button>
             </div>
           </div>
 
