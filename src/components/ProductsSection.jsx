@@ -7,56 +7,78 @@ export default function ProductsSection({ onSelectProduct }) {
 
   const products = [
     {
-      id: 'algorithm-all-in-one',
-      name: 'Algorithm All-in-One AI Box',
+      id: 'gvs-knx-touch',
+      name: 'GVS KNX Smart Touch S7 & Waltz Panels',
+      category: 'automation',
+      desc: '7" IPS Android smart panel with integrated SIP video intercom, Tuya gateway, and 4/6/8 tactile metal button keypads.',
+      image: '/images/smart_switch_wall.jpg'
+    },
+    {
+      id: 'sunell-ai-thermal',
+      name: 'Sunell AI Thermal & Accurate Human Detection Camera',
+      category: 'surveillance',
+      desc: 'High-precision dual-spectrum thermal camera with AI perimeter protection, intrusion alarm & AI-FIRE flame tracking.',
+      image: '/images/ai_control.jpg'
+    },
+    {
+      id: 'sunell-64ch-nvr',
+      name: '64 CH 16 PoE 4K Edge AI NVR Server',
       category: 'ai-hardware',
-      desc: 'Edge AI processing unit converting existing HD Cameras, DVRs, and NVRs into self-learning AI analytics.',
+      desc: 'Edge AI recording platform supporting 400Mbps bandwidth, RAID 0/1/5/6/10, ONVIF S&T, and real-time deep learning analytics.',
       image: '/images/integration.jpg'
     },
     {
-      id: 'faceme-terminal',
-      name: 'FaceMe® Biometric Access Terminal',
-      category: 'access',
-      desc: 'Facial recognition terminal with face data verification, floor stand & turnstile channel sync.',
-      image: '/images/security.jpg'
-    },
-    {
-      id: 'knx-touch-panels',
-      name: 'Flush KNX Touch Switch Panels',
+      id: 'tuya-scene-switch',
+      name: 'Tuya F3PRO Multifunctional LCD Scene Switch',
       category: 'automation',
-      desc: 'Luxury glass & stone smart home switch panels for climate, lighting, and motorized shutter control.',
-      image: '/images/smart_building.jpg'
-    },
-    {
-      id: 'cob-led-videowall',
-      name: 'All-in-One COB LED Video Wall',
-      category: 'display',
-      desc: 'Modular COB LED display matrix with integrated AVoIP signal routing for command & control centers.',
-      image: '/images/av.jpg'
+      desc: '3.5-inch touch LCD scene switch with 4 relay outputs, 8 scene bindings, 4 dimming channels, and Zigbee 3.0 mesh networking.',
+      image: '/images/smart_home.jpg'
     },
     {
       id: 'anpr-barrier-system',
-      name: 'ANPR Gate Barrier System',
+      name: 'AI ANPR & CE-Certified Community Barrier Gate',
       category: 'traffic',
-      desc: 'Automated vehicle license plate recognition camera with barrier control & parking telemetry.',
+      desc: 'Deep learning license plate recognition camera with integrated boom barrier, automated parking guidance & reserver units.',
       image: '/images/parking.jpg'
     },
     {
-      id: 'ai-thermal-camera',
-      name: 'AI Thermal & Optical Surveillance',
+      id: 'uvis-access-control',
+      name: 'Under Vehicle Inspection (UVIS) & Biometrics',
+      category: 'access',
+      desc: 'High-speed line-scan camera under-vehicle chassis inspection paired with facial recognition speed gates and turnstiles.',
+      image: '/images/security.jpg'
+    },
+    {
+      id: 'solar-4g-ptz',
+      name: 'Site Monitoring Solar 4G PTZ Cameras',
       category: 'surveillance',
-      desc: 'Multi-sensor thermal camera with accurate human detection, intrusion alarm & fire detection.',
-      image: '/images/ai_control.jpg'
+      desc: 'Zero-power 4G LTE PTZ cameras with 80m night vision, optical zoom, and iOS/Android mobile streaming for remote construction.',
+      image: '/images/flagship_project.jpg'
+    },
+    {
+      id: 'starlink-terminal',
+      name: 'Authorized Starlink High-Speed Satellite Terminal',
+      category: 'ai-hardware',
+      desc: 'Enterprise satellite internet terminal installation for remote facilities, off-grid villas, and high-bandwidth telemetry uplinks.',
+      image: '/images/hero.jpg'
+    },
+    {
+      id: 'cob-led-videowall',
+      name: 'Curved Central Command Room COB Video Wall',
+      category: 'display',
+      desc: 'Fine-pitch COB LED curved display wall with CMS local/remote multi-screen management for 24/7 mission-critical operations.',
+      image: '/images/av.jpg'
     }
   ];
 
   const categories = [
-    { id: 'all', label: 'All Products' },
-    { id: 'ai-hardware', label: 'AI Edge Boxes' },
-    { id: 'access', label: 'Access Control' },
-    { id: 'automation', label: 'KNX Touch Panels' },
-    { id: 'display', label: 'COB Video Walls' },
-    { id: 'traffic', label: 'ANPR Systems' }
+    { id: 'all', label: 'All Equipment' },
+    { id: 'automation', label: 'Smart Home & KNX' },
+    { id: 'surveillance', label: 'AI & Thermal CCTV' },
+    { id: 'ai-hardware', label: 'Edge AI & Satellite' },
+    { id: 'traffic', label: 'ANPR & Barriers' },
+    { id: 'access', label: 'Access & UVIS' },
+    { id: 'display', label: 'Control Room Displays' }
   ];
 
   const filteredProducts = activeCategory === 'all' 

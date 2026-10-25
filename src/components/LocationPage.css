@@ -208,3 +208,33 @@
     grid-template-columns: 1fr;
   }
 }
+
+@media (max-width: 640px) {
+  .location-page {
+    padding-top: 6rem;
+    padding-bottom: 3rem;
+  }
+  .location-hero-card {
+    padding: 1.75rem 1.25rem;
+    border-radius: 12px;
+  }
+  .hero-flag-header {
+    gap: 1rem;
+  }
+  .big-flag {
+    font-size: 2.5rem;
+  }
+  .location-title {
+    font-size: 1.625rem;
+  }
+  .location-hero-stats {
+    gap: 1.25rem;
+    flex-wrap: wrap;
+  }
+  .hubs-grid {
+    grid-template-columns: 1fr;
+  }
+  .office-contact-card {
+    padding: 1.5rem 1.25rem;
+  }
+}

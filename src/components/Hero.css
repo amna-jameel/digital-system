@@ -20,6 +20,7 @@
   overflow: hidden;
 }
 
+.hero-bg-video,
 .hero-bg-img {
   width: 100%;
   height: 100%;
@@ -204,7 +205,7 @@
     padding-bottom: 2.5rem;
   }
   .hero-headline {
-    font-size: clamp(2rem, 7.5vw, 2.75rem);
+    font-size: clamp(1.75rem, 7.5vw, 2.75rem);
     margin-bottom: 1.125rem;
   }
   .hero-description {
@@ -232,5 +233,15 @@
   }
   .hud-node.top-right {
     display: none; /* Keep clean on tight mobile screens */
+  }
+}
+
+@media (max-width: 360px) {
+  .hero-headline {
+    font-size: 1.625rem;
+  }
+  .hero-btn-large {
+    padding: 0.8125rem 1.25rem;
+    font-size: 0.9375rem;
   }
 }

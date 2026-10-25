@@ -12,7 +12,7 @@ export default function SecuritySection({ onSelectSolution }) {
   ];
 
   return (
-    <section className="security-section">
+    <section id="security" className="security-section">
       <div className="container">
         <div className="security-grid">
           {/* Visual Column */}

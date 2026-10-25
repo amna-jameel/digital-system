@@ -12,7 +12,9 @@ export default function SystemsIntegrationSection({ onSelectSolution }) {
   ];
 
   return (
-    <section className="integration-section">
+    <section id="integration" className="integration-section">
+      <span id="digital-transformation" className="nav-anchor"></span>
+      <span id="it-networking" className="nav-anchor"></span>
       <div className="container">
         <div className="integration-grid">
           {/* Left Column: Visual Architecture */}
@@ -56,50 +58,50 @@ export default function SystemsIntegrationSection({ onSelectSolution }) {
           {/* Right Column: Editorial Copy */}
           <div className="integration-content-col">
             <span className="eyebrow">
-              <span className="eyebrow-dot"></span> THE INTEGRATION DIFFERENTIATOR
+              <span className="eyebrow-dot"></span> ALL SERVICES IN ONE FIBER OPTIC CABLE
             </span>
 
             <h2 className="section-title integration-headline">
-              Connected technology.<br />
-              <span className="headline-muted">One integrated environment.</span>
+              14 Systems.<br />
+              <span className="headline-muted">One unified fiber optic cable.</span>
             </h2>
 
             <p className="section-subtitle integration-description">
-              Most vendors deploy isolated systems. AETHEL bridges computer vision, physical access, building automation, and high-density video walls into a single orchestrating software engine.
+              Rather than installing disparate, conflicting network wiring, METRISYS & Unique Future Digital Systems consolidate your entire facility over a single high-speed fiber optic infrastructure.
             </p>
 
             <div className="diff-bullets">
               <div className="diff-item">
                 <div className="diff-bullet-num">01</div>
                 <div>
-                  <h3 className="diff-title">Native Protocol Bridging</h3>
-                  <p className="diff-text">Seamless translation between legacy industrial protocols (BACnet, Modbus) and modern REST/GraphQL cloud APIs.</p>
+                  <h3 className="diff-title">Triple Play & Building Telecom</h3>
+                  <p className="diff-text">High-speed gigabit Internet, Digital TV distribution, and IP telephony with zero signal loss over kilometers of campus fiber.</p>
                 </div>
               </div>
 
               <div className="diff-item">
                 <div className="diff-bullet-num">02</div>
                 <div>
-                  <h3 className="diff-title">Cross-System Event Triggers</h3>
-                  <p className="diff-text">An ANPR camera reading an VIP vehicle can automatically prime access turnstiles, adjust floor HVAC, and signal executive displays.</p>
+                  <h3 className="diff-title">Integrated Safety & Access Security</h3>
+                  <p className="diff-text">Real-time interconnection between UVIS under-vehicle scanning, ANPR gates, biometric speed turnstiles, and AI-FIRE flame alarms.</p>
                 </div>
               </div>
 
               <div className="diff-item">
                 <div className="diff-bullet-num">03</div>
                 <div>
-                  <h3 className="diff-title">Single Pane of Glass Command</h3>
-                  <p className="diff-text">Operators monitor all physical security, environmental sensors, and video feeds from one unified screen.</p>
+                  <h3 className="diff-title">Central Control Room (CCR) Telemetry</h3>
+                  <p className="diff-text">All 14 subsystems feed into our curved COB LED video walls and CMS local/remote monitoring servers for instantaneous incident response.</p>
                 </div>
               </div>
             </div>
 
             <button 
               type="button" 
-              onClick={() => onSelectSolution('integration')}
+              onClick={() => onSelectSolution('fiber-unified')}
               className="btn btn-primary"
             >
-              <span>Explore Systems Integration</span>
+              <span>Explore One-Fiber Architecture</span>
               <ArrowRight size={16} />
             </button>
           </div>

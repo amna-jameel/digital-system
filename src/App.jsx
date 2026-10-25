@@ -4,6 +4,7 @@ import Hero from './components/Hero';
 import EcosystemSection from './components/EcosystemSection';
 import AiFeatureSection from './components/AiFeatureSection';
 import SmartBuildingSection from './components/SmartBuildingSection';
+import SmartHomeSection from './components/SmartHomeSection';
 import SecuritySection from './components/SecuritySection';
 import ParkingSection from './components/ParkingSection';
 import AudioVisualSection from './components/AudioVisualSection';
@@ -97,12 +98,19 @@ export default function App() {
               onSelectSolution={(solId) => navigateTo('solution', solId)}
             />
 
+            <EcosystemSection />
+
             <ProductsSection 
               onSelectProduct={() => setIsContactModalOpen(true)}
             />
 
             <SmartBuildingSection 
               onSelectSolution={(solId) => navigateTo('solution', solId)}
+            />
+
+            <SmartHomeSection 
+              onSelectSolution={(solId) => navigateTo('solution', solId)}
+              onOpenContactModal={() => setIsContactModalOpen(true)}
             />
 
             <SecuritySection 

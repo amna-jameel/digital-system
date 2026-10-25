@@ -92,7 +92,18 @@
 }
 
 @media (max-width: 640px) {
+  .contact-modal-header {
+    padding: 1.25rem 1rem;
+  }
+  .contact-form {
+    padding: 1.25rem 1rem;
+    gap: 1rem;
+  }
   .form-row {
     grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .modal-submitted-state {
+    padding: 2.5rem 1rem;
   }
 }

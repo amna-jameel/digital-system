@@ -16,6 +16,8 @@ export default function AiFeatureSection({ onSelectSolution }) {
 
   return (
     <section id="solutions" className="ai-feature-section">
+      <span id="cctv" className="nav-anchor"></span>
+      <span id="ai-features" className="nav-anchor"></span>
       <div className="container">
         <div className="ai-grid">
           {/* Left Column: Editorial Copy */}

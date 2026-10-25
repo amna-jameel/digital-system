@@ -12,21 +12,21 @@ export default function AudioVisualSection({ onSelectSolution }) {
   ];
 
   return (
-    <section className="av-section">
+    <section id="videowalls" className="av-section">
       <div className="container">
         <div className="av-grid">
           {/* Left Column: Content */}
           <div className="av-content-col">
             <span className="eyebrow">
-              <span className="eyebrow-dot"></span> COMMAND VISUALIZATION & AV
+              <span className="eyebrow-dot"></span> AI COMMAND CENTERS & VIDEO WALLS
             </span>
 
             <h2 className="section-title av-headline">
-              Visual environments for modern operations.
+              AI command visualization & video operations.
             </h2>
 
             <p className="section-subtitle av-description">
-              High-density video wall installations, command desks, and collaboration environments engineered for uninterrupted enterprise decision-making.
+              High-density AI video wall installations, real-time computer vision matrices, and enterprise command centers engineered for autonomous incident monitoring.
             </p>
 
             <div className="av-solutions-list">

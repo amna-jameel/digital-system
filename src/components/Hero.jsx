@@ -1,40 +1,36 @@
 import React from 'react';
 import { ArrowRight, Shield, Cpu, Building, Radio, MapPin } from 'lucide-react';
+import heroVideo from '../assets/hero.mp4';
 import './Hero.css';
 
 export default function Hero({ onOpenContactModal }) {
   return (
     <section id="hero" className="hero-section">
-      {/* Full-screen Photorealistic Surveillance & Technology Background */}
+      {/* Full-screen Background Video */}
       <div className="hero-video-wrapper">
-        <img 
-          src="/images/hero.jpg" 
-          alt="Smart Security Operations & Surveillance Control Center" 
-          className="hero-bg-img"
-        />
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          poster="/images/hero.jpg"
+          className="hero-bg-video"
+        >
+          <source src={heroVideo} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
         <div className="hero-video-overlay"></div>
-        
-        {/* Dynamic Surveillance HUD Grid Elements */}
-        <div className="hero-hud-telemetry">
-          <div className="hud-node top-left">
-            <span className="hud-dot"></span>
-            <span className="hud-text">CAM-01 LIVE • ANPR FEED ACTIVE</span>
-          </div>
-          <div className="hud-node top-right">
-            <span className="hud-text">SYSTEM STATUS: OPTIMAL (60 FPS)</span>
-          </div>
-        </div>
       </div>
 
       <div className="container hero-container">
         <div className="hero-content">
           <h1 className="display-title hero-headline">
-            SMART SYSTEMS.<br />
-            <span className="headline-highlight">CONNECTED INTELLIGENCE.</span>
+            ARTIFICIAL INTELLIGENCE.<br />
+            <span className="headline-highlight">AUTONOMOUS SYSTEMS.</span>
           </h1>
 
           <p className="hero-description">
-            Empowering businesses, communities, and infrastructure with AI video analytics, smart building controls, and digital technology solutions.
+            Empowering enterprise infrastructure with cutting-edge Artificial Intelligence, deep learning video analytics, and autonomous computer vision systems.
           </p>
 
           <div className="hero-cta-group">

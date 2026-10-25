@@ -16,7 +16,7 @@ export default function Footer({ onOpenLocationModal, onSelectCountry, onSelectS
               <span className="brand-name">METRISYS</span>
             </a>
             <p className="footer-tagline">
-              Future Digital Systems company delivering AI video analytics, security infrastructure, smart building automation, and video wall solutions across multiple regional experiences.
+              Enterprise Artificial Intelligence systems company delivering computer vision analytics, neural security infrastructure, autonomous automation, and ultra-HD command video wall operations.
             </p>
             <div className="footer-global-pill" onClick={onOpenLocationModal}>
               <Globe size={14} className="accent-icon" />

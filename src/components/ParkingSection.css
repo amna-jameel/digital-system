@@ -1,7 +1,8 @@
 .parking-section {
   padding: 6.5rem 0;
-  background-color: var(--bg-light);
-  color: var(--text-light-primary);
+  background-color: var(--bg-dark, #0B1120);
+  border-top: 1px solid var(--border-dark);
+  border-bottom: 1px solid var(--border-dark);
 }
 
 .parking-editorial-box {
@@ -9,17 +10,34 @@
   grid-template-columns: 1fr 1.1fr;
   gap: 4rem;
   align-items: center;
-  background-color: #FFFFFF;
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--border-light);
+  background: rgba(15, 23, 42, 0.85);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
   padding: 3.5rem;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.45);
 }
 
 .parking-text-col {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+}
+
+.parking-title {
+  font-size: clamp(2rem, 3.4vw, 2.75rem);
+  font-weight: 700;
+  color: #FFFFFF;
+  letter-spacing: -0.02em;
+  line-height: 1.18;
+  margin: 0.5rem 0 1rem 0;
+}
+
+.parking-subtitle {
+  font-size: 1.025rem;
+  color: #CBD5E1;
+  line-height: 1.6;
+  margin: 0;
+  max-width: 580px;
 }
 
 .mobility-chips {
@@ -33,27 +51,50 @@
 .mobility-chip {
   display: flex;
   align-items: center;
-  gap: 0.625rem;
-  padding: 0.625rem 0.875rem;
-  background: var(--bg-light);
-  border-radius: var(--radius-sm);
-  font-size: 0.8125rem;
+  gap: 0.875rem;
+  padding: 0.75rem 1rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.mobility-chip:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(0, 210, 255, 0.3);
+  transform: translateX(3px);
 }
 
 .chip-bullet {
-  width: 6px;
-  height: 6px;
+  width: 7px;
+  height: 7px;
   border-radius: 50%;
-  background-color: var(--accent);
+  background-color: #00d2ff;
+  box-shadow: 0 0 8px #00d2ff;
+  flex-shrink: 0;
+}
+
+.chip-text-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
 }
 
 .chip-title {
   font-weight: 600;
-  color: var(--text-light-primary);
+  font-size: 0.875rem;
+  color: #FFFFFF;
 }
 
-.chip-text {
-  color: var(--text-light-secondary);
+.chip-separator {
+  color: #64748B;
+  font-size: 0.8rem;
+}
+
+.chip-desc {
+  font-size: 0.8125rem;
+  color: #94A3B8;
 }
 
 .parking-visual-col {
@@ -62,79 +103,75 @@
 
 .parking-image-wrapper {
   position: relative;
-  border-radius: var(--radius-md);
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.4);
 }
 
 .parking-img {
   width: 100%;
-  height: 420px;
+  height: 440px;
   object-fit: cover;
   display: block;
 }
 
-.anpr-telemetry-badge {
+.parking-photo-badge {
   position: absolute;
   bottom: 1.25rem;
   left: 1.25rem;
-  background: rgba(11, 14, 17, 0.92);
-  backdrop-filter: blur(10px);
-  padding: 0.875rem 1.25rem;
-  border-radius: var(--radius-sm);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  display: flex;
-  flex-direction: column;
-  gap: 0.375rem;
-}
-
-.anpr-header {
-  display: flex;
+  background: rgba(15, 23, 42, 0.88);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(0, 210, 255, 0.35);
+  border-radius: 999px;
+  padding: 6px 14px;
+  display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-}
-
-.anpr-tag {
-  font-size: 0.6875rem;
-  letter-spacing: 0.1em;
-  color: var(--text-dark-secondary);
-  font-weight: 600;
-}
-
-.anpr-readout {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.readout-plate {
-  font-family: monospace;
-  font-size: 1.125rem;
-  font-weight: 700;
-  color: #FFFFFF;
-  letter-spacing: 0.1em;
-  background: rgba(255, 255, 255, 0.1);
-  padding: 2px 8px;
-  border-radius: 3px;
-}
-
-.readout-status {
+  gap: 8px;
   font-size: 0.75rem;
-  color: #10B981;
   font-weight: 600;
-  letter-spacing: 0.05em;
+  color: #00d2ff;
+  letter-spacing: 0.04em;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+}
+
+.parking-photo-badge .live-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #00d2ff;
+  box-shadow: 0 0 8px #00d2ff;
 }
 
 @media (max-width: 1024px) {
   .parking-editorial-box {
     grid-template-columns: 1fr;
-    padding: 2rem;
+    padding: 2.25rem;
     gap: 2.5rem;
+  }
+
+  .parking-img {
+    height: 360px;
   }
 }
 
 @media (max-width: 640px) {
+  .parking-editorial-box {
+    padding: 1.5rem;
+  }
+
   .parking-img {
-    height: 320px;
+    height: 280px;
+  }
+
+  .chip-text-group {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.2rem;
+  }
+
+  .chip-separator {
+    display: none;
   }
 }

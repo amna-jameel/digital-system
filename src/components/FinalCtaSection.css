@@ -48,7 +48,32 @@
 }
 
 @media (max-width: 640px) {
+  .final-cta-section {
+    padding: 3.5rem 0;
+  }
   .final-cta-card {
-    padding: 3rem 1.5rem;
+    padding: 2.5rem 1.25rem;
+    border-radius: 12px;
+  }
+  .cta-headline {
+    font-size: 1.625rem;
+  }
+  .cta-subtitle {
+    font-size: 0.9375rem;
+    margin-bottom: 2rem;
+  }
+  .final-cta-btn-group {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.875rem;
+    margin-bottom: 2rem;
+  }
+  .final-cta-btn-group .btn {
+    width: 100%;
+    justify-content: center;
+  }
+  .cta-regions-bar {
+    font-size: 0.75rem;
+    line-height: 1.5;
   }
 }

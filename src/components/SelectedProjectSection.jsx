@@ -1,11 +1,29 @@
-import React from 'react';
-import { ArrowRight, MapPin, Building, Cpu, CheckCircle } from 'lucide-react';
-import { FLAGSHIP_PROJECT } from '../data/companyData';
+import React, { useState } from 'react';
+import { ArrowRight, MapPin, Building, Cpu, CheckCircle, Award, ExternalLink } from 'lucide-react';
+import { FLAGSHIP_PROJECT, MAJOR_ACHIEVEMENTS } from '../data/companyData';
 import './SelectedProjectSection.css';
 
 export default function SelectedProjectSection({ onSelectProject }) {
+  const [activeTab, setActiveTab] = useState('all');
+
+  const categories = [
+    { id: 'all', label: 'All Projects' },
+    { id: 'dubai', label: 'Dubai & UAE' },
+    { id: 'pakistan', label: 'Pakistan Landmark & HEC' },
+    { id: 'commercial', label: 'Smart Residential & Towers' }
+  ];
+
+  const filteredAchievements = MAJOR_ACHIEVEMENTS.filter(item => {
+    if (activeTab === 'all') return true;
+    if (activeTab === 'dubai') return item.location.toLowerCase().includes('dubai') || item.location.toLowerCase().includes('uae');
+    if (activeTab === 'pakistan') return item.location.toLowerCase().includes('pakistan') || item.category.toLowerCase().includes('hec');
+    if (activeTab === 'commercial') return item.category.toLowerCase().includes('smart') || item.category.toLowerCase().includes('tower');
+    return true;
+  });
+
   return (
     <section id="project" className="selected-project-section">
+      <span id="case-studies" className="nav-anchor"></span>
       <div className="container">
         {/* Editorial Feature Header */}
         <div className="project-badge-bar">
@@ -24,7 +42,7 @@ export default function SelectedProjectSection({ onSelectProject }) {
             />
             <div className="project-image-badge">
               <Building size={14} className="accent-icon" />
-              <span>140,000 m² Integrated Complex</span>
+              <span>International Mega Developments</span>
             </div>
           </div>
 
@@ -61,9 +79,65 @@ export default function SelectedProjectSection({ onSelectProject }) {
               onClick={onSelectProject}
               className="btn btn-primary project-cta"
             >
-              <span>View Case Study & Specifications</span>
+              <span>Discuss Similar Implementation</span>
               <ArrowRight size={16} />
             </button>
+          </div>
+        </div>
+
+        {/* Major Achievements Portfolio Grid (From Pages 62-75 of Document) */}
+        <div className="major-achievements-container">
+          <div className="achievements-head-row">
+            <div>
+              <span className="eyebrow">
+                <Award size={14} className="accent-icon" /> TRACK RECORD OF EXCELLENCE
+              </span>
+              <h3 className="section-title">Major Achievements & Reference Projects</h3>
+              <p className="section-subtitle">
+                Proven track record delivering mission-critical CCTV, ANPR, audio-visual, and smart infrastructure across Dubai, Pakistan, and the GCC.
+              </p>
+            </div>
+
+            <div className="achievement-filter-tabs">
+              {categories.map(cat => (
+                <button
+                  key={cat.id}
+                  type="button"
+                  className={`achieve-tab ${activeTab === cat.id ? 'active' : ''}`}
+                  onClick={() => setActiveTab(cat.id)}
+                >
+                  {cat.label}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <div className="achievements-grid">
+            {filteredAchievements.map((item, idx) => (
+              <div key={idx} className="achievement-card">
+                <div className="achieve-card-header">
+                  <span className="achieve-category">{item.category}</span>
+                  <div className="achieve-location">
+                    <MapPin size={12} className="accent-icon" />
+                    <span>{item.location}</span>
+                  </div>
+                </div>
+
+                <h4 className="achieve-title">{item.title}</h4>
+                <p className="achieve-desc">{item.desc}</p>
+
+                <div className="achieve-card-footer">
+                  <button 
+                    type="button" 
+                    className="achieve-btn"
+                    onClick={onSelectProject}
+                  >
+                    <span>View Project Scope</span>
+                    <ExternalLink size={12} />
+                  </button>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>

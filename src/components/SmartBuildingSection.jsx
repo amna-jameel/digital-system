@@ -19,19 +19,19 @@ export default function SmartBuildingSection({ onSelectSolution }) {
         <div className="smart-header-split">
           <div>
             <h2 className="section-title dark-text">
-              Intelligent spaces, connected systems.
+              AI-driven spaces, neural automation.
             </h2>
           </div>
           <div className="header-right-copy">
             <p className="section-subtitle dark-sub">
-              Engineering unobtrusive environmental intelligence into luxury commercial and executive residential architecture.
+              Engineering autonomous Artificial Intelligence and computer vision workflows into luxury commercial and executive architectural spaces.
             </p>
             <button 
               type="button" 
               onClick={() => onSelectSolution('smart-home')}
               className="btn btn-secondary-light"
             >
-              <span>Explore Smart Environments</span>
+              <span>Explore AI Environments</span>
               <ArrowRight size={16} />
             </button>
           </div>
