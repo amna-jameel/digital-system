@@ -1,3 +1,16 @@
+import centaurusImg from '../assets/Centaurus Islamabad.jpg';
+import ibnBattutaImg from '../assets/Ibn battuta.jpg';
+import magImg from '../assets/MAG 218 & MAG 214 Dubai.jpg';
+import palmViewsImg from '../assets/Palm Views East Jumeirah.jpg';
+import kingEdwardImg from '../assets/King Edward Medical University.jpg';
+import gcUniversityImg from '../assets/GC University Faisalabad.jpg';
+import jinnahMedImg from '../assets/Jinnah Sindh Medical University.jpg';
+import balochistanUniImg from '../assets/University of Balochistan Quetta.jpg';
+import kotliUniImg from '../assets/Kotli University Kotli.jpg';
+import badraImg from '../assets/Badra Community Dubai.jpg';
+import osnEtisalatImg from '../assets/OSN & Etisalat.jpg';
+import ariesTowerImg from '../assets/Aries Tower Business Avenue.jpg';
+
 export const GLOBAL_REGIONS = [
   {
     id: 'pakistan-lahore',
@@ -271,18 +284,18 @@ export const MAJOR_ACHIEVEMENTS = [
 ];
 
 export const CLIENT_LOGOS = [
-  { name: 'Centaurus Islamabad', desc: 'Smart Services Consultant' },
-  { name: 'Ibn Battuta Building', desc: 'CCTV & Smart Hotel Project' },
-  { name: 'MAG 218 & MAG 214 Dubai', desc: 'CCTV & Smart Parking' },
-  { name: 'Palm Views East Jumeirah', desc: 'ELV AMC Waterfront Project' },
-  { name: 'King Edward Medical University', desc: 'Smart Audio Visual Infrastructure' },
-  { name: 'GC University Faisalabad', desc: 'HEC Smart & Secure Campus' },
-  { name: 'Jinnah Sindh Medical University', desc: 'HEC Smart & Secure Campus' },
-  { name: 'University of Balochistan Quetta', desc: 'HEC Smart & Secure Campus' },
-  { name: 'Kotli University Kotli', desc: 'HEC Smart & Secure Campus' },
-  { name: 'Badra Community Dubai', desc: 'Smart Water Management' },
-  { name: 'OSN & Etisalat', desc: 'Broadcast & Satellite Installation' },
-  { name: 'Aries Tower Business Avenue', desc: 'Smart Green Apartments' }
+  { name: 'Centaurus Islamabad', desc: 'Smart Services Consultant', image: centaurusImg },
+  { name: 'Ibn Battuta Building', desc: 'CCTV & Smart Hotel Project', image: ibnBattutaImg },
+  { name: 'MAG 218 & MAG 214 Dubai', desc: 'CCTV & Smart Parking', image: magImg },
+  { name: 'Palm Views East Jumeirah', desc: 'ELV AMC Waterfront Project', image: palmViewsImg },
+  { name: 'King Edward Medical University', desc: 'Smart Audio Visual Infrastructure', image: kingEdwardImg },
+  { name: 'GC University Faisalabad', desc: 'HEC Smart & Secure Campus', image: gcUniversityImg },
+  { name: 'Jinnah Sindh Medical University', desc: 'HEC Smart & Secure Campus', image: jinnahMedImg },
+  { name: 'University of Balochistan Quetta', desc: 'HEC Smart & Secure Campus', image: balochistanUniImg },
+  { name: 'Kotli University Kotli', desc: 'HEC Smart & Secure Campus', image: kotliUniImg },
+  { name: 'Badra Community Dubai', desc: 'Smart Water Management', image: badraImg },
+  { name: 'OSN & Etisalat', desc: 'Broadcast & Satellite Installation', image: osnEtisalatImg },
+  { name: 'Aries Tower Business Avenue', desc: 'Smart Green Apartments', image: ariesTowerImg }
 ];
 
 export const COMPANY_PROFILE_STATS = {
