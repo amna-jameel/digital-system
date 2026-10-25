@@ -13,7 +13,7 @@ export default function Footer({ onOpenLocationModal, onSelectCountry, onSelectS
               <span className="brand-symbol">
                 <span className="symbol-core"></span>
               </span>
-              <span className="brand-name">METRISYS</span>
+              <span className="brand-name">UNIQUE SMART SOLUTIONS</span>
             </a>
             <p className="footer-tagline">
               Enterprise Artificial Intelligence systems company delivering computer vision analytics, neural security infrastructure, autonomous automation, and ultra-HD command video wall operations.
@@ -79,7 +79,7 @@ export default function Footer({ onOpenLocationModal, onSelectCountry, onSelectS
             <h3 className="footer-heading">Contact</h3>
             <ul className="footer-contact-info">
               <li>Global Inquiries:</li>
-              <li className="info-highlight">contact@metrisys.com</li>
+              <li className="info-highlight">contact@uniquesmartsolutions.com</li>
               <li>Regional Desk:</li>
               <li className="info-highlight">+971 4 380 9100</li>
             </ul>
@@ -89,7 +89,7 @@ export default function Footer({ onOpenLocationModal, onSelectCountry, onSelectS
         {/* Footer Bottom Bar */}
         <div className="footer-bottom-bar">
           <span className="copyright-text">
-            © {new Date().getFullYear()} METRISYS Future Digital Systems. All rights reserved.
+            © {new Date().getFullYear()} Unique Smart Solutions. All rights reserved.
           </span>
 
           <div className="legal-links">

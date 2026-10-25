@@ -159,8 +159,8 @@ export default function Navbar({ onOpenLocationModal, onOpenSearchModal, onOpenC
             <span className="symbol-core"></span>
           </span>
           <span className="brand-text">
-            <span className="brand-name">METRISYS</span>
-            <span className="brand-sub">FUTURE DIGITAL SYSTEMS</span>
+            <span className="brand-name">UNIQUE</span>
+            <span className="brand-sub">SMART SOLUTIONS</span>
           </span>
         </a>
 

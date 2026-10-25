@@ -39,7 +39,7 @@ export default function ContactModal({ isOpen, onClose }) {
             <CheckCircle size={48} className="accent-icon animate-fade-in" />
             <h3 className="submitted-title">Inquiry Received</h3>
             <p className="submitted-desc">
-              Thank you. An AETHEL systems engineering specialist from your selected region will review your specifications and contact you within 24 hours.
+              Thank you. A Unique Smart Solutions engineering specialist from your selected region will review your specifications and contact you within 24 hours.
             </p>
             <button 
               type="button" 

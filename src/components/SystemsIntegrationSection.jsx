@@ -67,7 +67,7 @@ export default function SystemsIntegrationSection({ onSelectSolution }) {
             </h2>
 
             <p className="section-subtitle integration-description">
-              Rather than installing disparate, conflicting network wiring, METRISYS & Unique Future Digital Systems consolidate your entire facility over a single high-speed fiber optic infrastructure.
+              Rather than installing disparate, conflicting network wiring, Unique Smart Solutions consolidates your entire facility over a single high-speed fiber optic infrastructure.
             </p>
 
             <div className="diff-bullets">

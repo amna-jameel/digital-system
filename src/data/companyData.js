@@ -116,7 +116,7 @@ export const TECHNOLOGY_SOLUTIONS = [
     id: 'cctv-analytics',
     title: 'CCTV & AI Video Analytics',
     shortDesc: 'Convert existing CCTV into self-learning AI video analytics with Sunell thermal and optical intelligence.',
-    fullDesc: 'METRISYS converts existing CCTV networks into proactive AI surveillance systems. Single-node and multi-node AI deployments analyze normal behavior, detect intruders, classify vehicles, and recognize human faces in real time.',
+    fullDesc: 'Unique Smart Solutions converts existing CCTV networks into proactive AI surveillance systems. Single-node and multi-node AI deployments analyze normal behavior, detect intruders, classify vehicles, and recognize human faces in real time.',
     capabilities: [
       'Sunell AI Thermal Human & Vehicle Detection',
       '64-Channel 16 PoE 4K NVR with Edge AI',
@@ -210,7 +210,7 @@ export const BRAND_PARTNERS = [
   'SIEMENS', 'Crestron', 'Control4', 'Lutron Electronics', 'Ecobee',
   'August Home', 'TADO', 'GOVEE', 'ZKTeco', 'COMMAX',
   'Rapiscan Systems', 'EATON', 'APC', 'AVAYA', 'Grandstream',
-  'ITC Audio', 'TimeTec', 'Guangxiang Optical', 'Unique Future Systems'
+  'ITC Audio', 'TimeTec', 'Guangxiang Optical', 'Unique Smart Solutions'
 ];
 
 export const MAJOR_ACHIEVEMENTS = [
@@ -287,7 +287,7 @@ export const CLIENT_LOGOS = [
 
 export const COMPANY_PROFILE_STATS = {
   headline: 'Securing Today, Powering Tomorrow with Intelligence.',
-  tagline: 'Joint Venture: Unique Future Digital Systems & Bridge Technologies',
+  tagline: 'Unique Smart Solutions & Global Technology Partners',
   subtext: 'We Invest In The Future — Unique, Future, Smart',
   pillars: [
     { title: 'AI & Automation', desc: 'Self-learning computer vision, Sunell thermal AI, and automated robotics.' },
@@ -317,7 +317,7 @@ export const FLAGSHIP_PROJECT = {
     'Automated ANPR & Smart Parking',
     'Curved LED Central Control Room'
   ],
-  description: 'From acting as Smart Services Consultant for Centaurus Islamabad (Mega Mall, Residencia & Corporate Tower) to deploying turnkey CCTV, ANPR, and Smart Parking across Dubai\'s MAG 218 & MAG 214 towers and HEC Universities across Pakistan, METRISYS and its Joint Venture partners deliver unified digital systems that redefine reliability.',
+  description: 'From acting as Smart Services Consultant for Centaurus Islamabad (Mega Mall, Residencia & Corporate Tower) to deploying turnkey CCTV, ANPR, and Smart Parking across Dubai\'s MAG 218 & MAG 214 towers and HEC Universities across Pakistan, Unique Smart Solutions and its Joint Venture partners deliver unified digital systems that redefine reliability.',
   image: '/images/flagship_project.jpg'
 };
 

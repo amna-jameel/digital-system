@@ -51,7 +51,7 @@ export default function LocationPage({ countrySlug, onBackToHome, onOpenContactM
         <div className="details-col-main">
           <h2 className="details-heading">Regional Engineering Infrastructure</h2>
           <p className="details-paragraph">
-            AETHEL's {region.name} operations center provides localized deployment, turnkey systems integration, and ongoing lifecycle maintenance for enterprise commercial facilities, smart mobility, and government infrastructure.
+            Unique Smart Solutions' {region.name} operations center provides localized deployment, turnkey systems integration, and ongoing lifecycle maintenance for enterprise commercial facilities, smart mobility, and government infrastructure.
           </p>
 
           <h3 className="subheading">Key Regional Highlights</h3>
