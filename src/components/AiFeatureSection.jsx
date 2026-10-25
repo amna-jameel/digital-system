@@ -220,9 +220,6 @@ export default function AiFeatureSection({ onSelectSolution }) {
                       className="algo-img" 
                       loading="lazy"
                     />
-                    <span className="algo-index-tag">
-                      {idx + 1 < 10 ? `0${idx + 1}` : idx + 1}
-                    </span>
                   </div>
                   <div className="algo-body">
                     <div className="algo-title-row">
