@@ -114,7 +114,7 @@ export default function LocationSelectorModal({ isOpen, onClose, onSelectCountry
         {/* Modal Footer */}
         <div className="location-modal-footer">
           <p className="footer-note">
-            Unique Smart Solutions operates across key regional hubs (Pakistan, Saudi Arabia, Dubai, Oman) with centralized engineering support.
+            Unique Smart Solutions operates across key regional hubs (Pakistan, Dubai UAE, Saudi Arabia, Oman, Portugal) with centralized engineering support.
           </p>
         </div>
       </div>

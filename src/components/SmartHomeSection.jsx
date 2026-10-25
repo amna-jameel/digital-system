@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { 
   Home, Shield, Flame, Lock, Zap, Music, Wifi, 
   Sliders, Smartphone, Mic, CheckCircle2, ArrowRight,
-  Sun, Moon, Film, BedDouble, Wind, Eye, Sparkles
+  Sun, Moon, Film, BedDouble, Wind, Eye, Sparkles,
+  ChevronDown, Check
 } from 'lucide-react';
 import fiberImg from '../assets/eco-fiber.jpg';
 import surveillanceImg from '../assets/eco-surveillance.jpg';
@@ -14,6 +15,19 @@ export default function SmartHomeSection({ onSelectSolution, onOpenContactModal 
   // Active pillar tab (from Page 39 of proposal)
   const [activePillar, setActivePillar] = useState('convenience');
   const [activeEcoTier, setActiveEcoTier] = useState('knx');
+  const [pillarDropdownOpen, setPillarDropdownOpen] = useState(false);
+  const dropdownRef = useRef(null);
+
+  // Close dropdown on click outside
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setPillarDropdownOpen(false);
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
 
   const pillars = [
     {
@@ -218,19 +232,84 @@ export default function SmartHomeSection({ onSelectSolution, onOpenContactModal 
             </p>
           </div>
 
-          {/* Architectural Clean Pillar Tabs (No Emojis) */}
-          <div className="pillars-nav-bar">
-            {pillars.map((p, idx) => (
+          {/* 6-Pillar Custom Architectural Dropdown Selector */}
+          <div className="pillars-dropdown-wrapper" ref={dropdownRef}>
+            <div className="dropdown-label-bar">
+              <span className="dropdown-label-text">
+                <Sliders size={13} className="accent-icon" />
+                SELECT SYSTEM PILLAR
+              </span>
+              <span className="dropdown-step-indicator">
+                PILLAR 0{pillars.findIndex(p => p.id === activePillar) + 1} OF 06
+              </span>
+            </div>
+
+            <div className="pillars-dropdown-relative">
               <button
-                key={p.id}
                 type="button"
-                className={`pillar-nav-btn ${activePillar === p.id ? 'is-active' : ''}`}
-                onClick={() => setActivePillar(p.id)}
+                className={`pillars-dropdown-trigger ${pillarDropdownOpen ? 'is-open' : ''}`}
+                onClick={() => setPillarDropdownOpen(!pillarDropdownOpen)}
+                aria-haspopup="listbox"
+                aria-expanded={pillarDropdownOpen}
               >
-                <span className="pillar-nav-index">0{idx + 1}</span>
-                <span className="pillar-nav-label">{p.title}</span>
+                <div className="trigger-main-content">
+                  <span className="trigger-index-pill">
+                    0{pillars.findIndex(p => p.id === activePillar) + 1}
+                  </span>
+                  <div className="trigger-text-column">
+                    <span className="trigger-heading">{currentPillarData.title}</span>
+                    <span className="trigger-description">{currentPillarData.subtitle}</span>
+                  </div>
+                </div>
+                <div className="trigger-action-pill">
+                  <span className="trigger-protocol-badge">{currentPillarData.protocol}</span>
+                  <ChevronDown
+                    size={18}
+                    className={`dropdown-chevron-icon ${pillarDropdownOpen ? 'is-rotated' : ''}`}
+                  />
+                </div>
               </button>
-            ))}
+
+              {pillarDropdownOpen && (
+                <div className="pillars-dropdown-menu animate-fade-in" role="listbox">
+                  <div className="dropdown-menu-header">
+                    <span>COMPLETE 6-PILLAR RESIDENTIAL ARCHITECTURE</span>
+                    <span className="close-hint">CHOOSE OPTION (1 - 6)</span>
+                  </div>
+                  {pillars.map((p, idx) => {
+                    const isSelected = activePillar === p.id;
+                    return (
+                      <div
+                        key={p.id}
+                        role="option"
+                        aria-selected={isSelected}
+                        className={`dropdown-option-row ${isSelected ? 'is-selected' : ''}`}
+                        onClick={() => {
+                          setActivePillar(p.id);
+                          setPillarDropdownOpen(false);
+                        }}
+                      >
+                        <span className="option-index">0{idx + 1}</span>
+                        <div className="option-meta">
+                          <div className="option-title-line">
+                            <span className="option-title">{p.title}</span>
+                            <span className="option-protocol-tag">{p.protocol}</span>
+                          </div>
+                          <span className="option-sub">{p.subtitle}</span>
+                        </div>
+                        {isSelected ? (
+                          <span className="option-check-badge">
+                            <Check size={14} /> ACTIVE
+                          </span>
+                        ) : (
+                          <span className="option-select-hint">SELECT</span>
+                        )}
+                      </div>
+                    );
+                  })}
+                </div>
+              )}
+            </div>
           </div>
 
           {/* Active Pillar Showcase: Authentic Photo & Technical Specifications */}

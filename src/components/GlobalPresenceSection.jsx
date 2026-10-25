@@ -34,6 +34,11 @@ export default function GlobalPresenceSection({ onSelectCountry }) {
       query: 'Majan Building, Ghala, Muscat, Sultanate of Oman',
       localZoom: 13,
       label: 'Oman Operations'
+    },
+    'portugal': {
+      query: 'Rua Santa Marta 43, 1150-293 Lisbon, Portugal',
+      localZoom: 14,
+      label: 'Portugal Operations'
     }
   };
 
@@ -129,6 +134,18 @@ export default function GlobalPresenceSection({ onSelectCountry }) {
                   </button>
                 );
               })}
+            </div>
+
+            {/* Mobile Direct Action Button: Immediately accessible on phone without scrolling down */}
+            <div className="mobile-dossier-action-bar">
+              <button
+                type="button"
+                className="btn btn-primary full-width mobile-dossier-btn"
+                onClick={() => onSelectCountry(selectedRegion.slug)}
+              >
+                <span>View {selectedRegion.name} Office Dossier</span>
+                <ArrowRight size={15} />
+              </button>
             </div>
           </div>
 
