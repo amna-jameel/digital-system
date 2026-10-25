@@ -4,7 +4,7 @@ import { TECHNOLOGY_SOLUTIONS } from '../data/companyData';
 import './SolutionPage.css';
 
 export default function SolutionPage({ solutionId, onBackToHome, onOpenContactModal }) {
-  const solution = TECHNOLOGY_SOLUTIONS.find(s => s.id === solutionId) || TECHNOLOGY_SOLUTIONS[0];
+  const solution = TECHNOLOGY_SOLUTIONS.find(s => s.id === solutionId || s.aliasId === solutionId) || TECHNOLOGY_SOLUTIONS[0];
 
   return (
     <div className="solution-page container animate-fade-in">

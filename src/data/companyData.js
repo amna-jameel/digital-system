@@ -127,9 +127,10 @@ export const TECHNOLOGY_SOLUTIONS = [
   },
   {
     id: 'cctv-analytics',
-    title: 'CCTV & AI Video Analytics',
-    shortDesc: 'Convert existing CCTV into self-learning AI video analytics with Sunell thermal and optical intelligence.',
-    fullDesc: 'Unique Smart Solutions converts existing CCTV networks into proactive AI surveillance systems. Single-node and multi-node AI deployments analyze normal behavior, detect intruders, classify vehicles, and recognize human faces in real time.',
+    aliasId: 'ai-video-analytics',
+    title: 'CCTV & Metrisys AI Video Analytics',
+    shortDesc: 'Convert existing CCTV networks into intelligent monitoring hubs utilizing Metrisys AI Video Analytics technology.',
+    fullDesc: 'Unique Smart Solutions deploys Metrisys AI Video Analytics to transform standard video streams into proactive operational intelligence. Advanced computer vision algorithms analyze monitored spaces, detect perimeter breaches, track objects, and alert on critical events in real time.',
     capabilities: [
       'Sunell AI Thermal Human & Vehicle Detection',
       '64-Channel 16 PoE 4K NVR with Edge AI',

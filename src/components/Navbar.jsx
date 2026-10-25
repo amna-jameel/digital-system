@@ -72,7 +72,7 @@ export default function Navbar({ onOpenLocationModal, onOpenSearchModal, onOpenC
       isMega: true,
       items: [
         { label: 'Solutions Overview', targetId: 'solutions', desc: 'Comprehensive enterprise AI solutions', icon: Layers },
-        { label: 'CCTV & AI Analytics', targetId: 'cctv', desc: 'Self-learning computer vision & Sunell thermal', icon: Eye },
+        { label: 'CCTV & AI Analytics', targetId: 'cctv', desc: 'Metrisys AI Video Analytics & vision intelligence', icon: Eye },
         { label: 'Access Control', targetId: 'security', desc: 'Biometric face recognition & speed gates', icon: Shield },
         { label: 'Parking & ANPR', targetId: 'parking', desc: 'License plate tracking & parking reservers', icon: Car },
         { label: 'Smart Traffic', targetId: 'traffic', desc: 'Flow telemetry & violation detection', icon: Sliders },
