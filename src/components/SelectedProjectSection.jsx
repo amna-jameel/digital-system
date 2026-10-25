@@ -123,7 +123,6 @@ export default function SelectedProjectSection({ onSelectProject }) {
                       className="achieve-photo"
                       loading="lazy"
                     />
-                    <div className="achieve-img-overlay"></div>
                     <span className="achieve-category-badge">{item.category}</span>
                   </div>
                 )}

@@ -28,7 +28,6 @@ export default function ClientsSection() {
                   className="client-project-photo" 
                   loading="lazy" 
                 />
-                <div className="client-img-overlay"></div>
               </div>
               <div className="client-info">
                 <h3 className="client-name">{client.name}</h3>
