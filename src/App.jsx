@@ -1,185 +1,155 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import { BrowserRouter, Routes, Route, Navigate, useNavigate } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import EcosystemSection from './components/EcosystemSection';
-import AiFeatureSection from './components/AiFeatureSection';
-import SmartBuildingSection from './components/SmartBuildingSection';
-import SmartHomeSection from './components/SmartHomeSection';
-import SecuritySection from './components/SecuritySection';
-import ParkingSection from './components/ParkingSection';
-import AudioVisualSection from './components/AudioVisualSection';
-import SystemsIntegrationSection from './components/SystemsIntegrationSection';
-import GlobalPresenceSection from './components/GlobalPresenceSection';
-import SelectedProjectSection from './components/SelectedProjectSection';
-import FinalCtaSection from './components/FinalCtaSection';
 import Footer from './components/Footer';
+import ScrollToTop from './components/ScrollToTop';
 
+// Six Main Multi-Page Components
+import HomePage from './pages/HomePage';
+import AboutPage from './pages/AboutPage';
+import SolutionsPage from './pages/SolutionsPage';
+import ProductsPage from './pages/ProductsPage';
+import ProjectsPage from './pages/ProjectsPage';
+import ClientsPage from './pages/ClientsPage';
+
+// Deep Dossier Sub-Pages
+import LocationPage from './components/LocationPage';
+import SolutionPage from './components/SolutionPage';
+
+// Global Modals
 import LocationSelectorModal from './components/LocationSelectorModal';
 import ContactModal from './components/ContactModal';
 import SearchModal from './components/SearchModal';
 
-import LocationPage from './components/LocationPage';
-import SolutionPage from './components/SolutionPage';
-
-import IndustriesSection from './components/IndustriesSection';
-import PartnersSection from './components/PartnersSection';
-import ProductsSection from './components/ProductsSection';
-import ClientsSection from './components/ClientsSection';
-
-export default function App() {
-  // Navigation State
-  const [currentRoute, setCurrentRoute] = useState('home'); // 'home', 'location', 'solution'
-  const [routeParam, setRouteParam] = useState(''); // e.g. 'pakistan' or 'ai-video-analytics'
+function AppContent() {
+  const navigate = useNavigate();
 
   // Modal States
   const [isLocationModalOpen, setIsLocationModalOpen] = useState(false);
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
   const [isSearchModalOpen, setIsSearchModalOpen] = useState(false);
 
-  // Synchronize browser history / URL path
-  useEffect(() => {
-    const handlePopState = () => {
-      const path = window.location.pathname;
-      if (path.startsWith('/locations/')) {
-        const country = path.replace('/locations/', '');
-        setCurrentRoute('location');
-        setRouteParam(country);
-      } else if (path.startsWith('/solutions/')) {
-        const sol = path.replace('/solutions/', '');
-        setCurrentRoute('solution');
-        setRouteParam(sol);
-      } else {
-        setCurrentRoute('home');
-        setRouteParam('');
-      }
-    };
+  const handleSelectCountry = (countrySlug) => {
+    setIsLocationModalOpen(false);
+    navigate(`/locations/${countrySlug}`);
+  };
 
-    window.addEventListener('popstate', handlePopState);
-    handlePopState();
-    return () => window.removeEventListener('popstate', handlePopState);
-  }, []);
-
-  const navigateTo = (route, param = '') => {
-    setCurrentRoute(route);
-    setRouteParam(param);
-
-    let newPath = '/';
-    if (route === 'location') {
-      newPath = `/locations/${param}`;
-    } else if (route === 'solution') {
-      newPath = `/solutions/${param}`;
-    }
-
-    window.history.pushState({}, '', newPath);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+  const handleSelectSolution = (solId) => {
+    setIsSearchModalOpen(false);
+    navigate(`/solutions#${solId}`);
   };
 
   return (
     <div className="app-root">
-      {/* Site Header & Global Navbar */}
+      {/* Automatic Scroll to Top / Anchor on Navigation */}
+      <ScrollToTop />
+
+      {/* Corporate Global Navbar with 6 Direct Links */}
       <Navbar
         onOpenLocationModal={() => setIsLocationModalOpen(true)}
         onOpenSearchModal={() => setIsSearchModalOpen(true)}
         onOpenContactModal={() => setIsContactModalOpen(true)}
-        currentRoute={currentRoute}
-        navigateTo={navigateTo}
       />
 
-      {/* Main Content Router */}
+      {/* Main Multi-Page Route Outlet */}
       <main>
-        {currentRoute === 'home' && (
-          <>
-            <Hero 
-              onOpenContactModal={() => setIsContactModalOpen(true)}
-              onOpenLocationModal={() => setIsLocationModalOpen(true)}
-            />
-
-            <AiFeatureSection 
-              onSelectSolution={(solId) => navigateTo('solution', solId)}
-            />
-
-            <EcosystemSection />
-
-            <ProductsSection 
-              onSelectProduct={() => setIsContactModalOpen(true)}
-            />
-
-            <SmartBuildingSection 
-              onSelectSolution={(solId) => navigateTo('solution', solId)}
-            />
-
-            <SmartHomeSection 
-              onSelectSolution={(solId) => navigateTo('solution', solId)}
-              onOpenContactModal={() => setIsContactModalOpen(true)}
-            />
-
-            <SecuritySection 
-              onSelectSolution={(solId) => navigateTo('solution', solId)}
-            />
-
-            <ParkingSection 
-              onSelectSolution={(solId) => navigateTo('solution', solId)}
-            />
-
-            <AudioVisualSection 
-              onSelectSolution={(solId) => navigateTo('solution', solId)}
-            />
-
-            <SystemsIntegrationSection 
-              onSelectSolution={(solId) => navigateTo('solution', solId)}
-            />
-
-            <IndustriesSection />
-
-            <PartnersSection />
-
-            <ClientsSection />
-
-            <GlobalPresenceSection 
-              onSelectCountry={(countrySlug) => navigateTo('location', countrySlug)}
-            />
-
-            <SelectedProjectSection 
-              onSelectProject={() => setIsContactModalOpen(true)}
-            />
-
-            <FinalCtaSection 
-              onOpenContactModal={() => setIsContactModalOpen(true)}
-            />
-          </>
-        )}
-
-        {currentRoute === 'location' && (
-          <LocationPage
-            countrySlug={routeParam}
-            onBackToHome={() => navigateTo('home')}
-            onOpenContactModal={() => setIsContactModalOpen(true)}
+        <Routes>
+          {/* 1. Home */}
+          <Route 
+            path="/" 
+            element={
+              <HomePage 
+                onOpenContactModal={() => setIsContactModalOpen(true)}
+                onOpenLocationModal={() => setIsLocationModalOpen(true)}
+              />
+            } 
           />
-        )}
 
-        {currentRoute === 'solution' && (
-          <SolutionPage
-            solutionId={routeParam}
-            onBackToHome={() => navigateTo('home')}
-            onOpenContactModal={() => setIsContactModalOpen(true)}
+          {/* 2. About Us (Includes Dedicated 5 Locations Section) */}
+          <Route 
+            path="/about" 
+            element={
+              <AboutPage 
+                onOpenContactModal={() => setIsContactModalOpen(true)}
+              />
+            } 
           />
-        )}
+
+          {/* 3. Solutions (All Solution Sections Organized Visually) */}
+          <Route 
+            path="/solutions" 
+            element={
+              <SolutionsPage 
+                onOpenContactModal={() => setIsContactModalOpen(true)}
+                navigateToSolution={(solId) => navigate(`/solutions#${solId}`)}
+              />
+            } 
+          />
+
+          {/* 4. Products (Hardware & Systems Portfolio) */}
+          <Route 
+            path="/products" 
+            element={
+              <ProductsPage 
+                onOpenContactModal={() => setIsContactModalOpen(true)}
+              />
+            } 
+          />
+
+          {/* 5. Projects (Flagship Showcase & Achievements Portfolio) */}
+          <Route 
+            path="/projects" 
+            element={
+              <ProjectsPage 
+                onOpenContactModal={() => setIsContactModalOpen(true)}
+              />
+            } 
+          />
+
+          {/* 6. Clients (Enterprise Clients & Global OEM Partners) */}
+          <Route 
+            path="/clients" 
+            element={
+              <ClientsPage 
+                onOpenContactModal={() => setIsContactModalOpen(true)}
+              />
+            } 
+          />
+
+          {/* Deep Dossier Sub-Pages */}
+          <Route 
+            path="/locations/:countrySlug" 
+            element={
+              <LocationPageWrapper 
+                onOpenContactModal={() => setIsContactModalOpen(true)} 
+              />
+            } 
+          />
+          <Route 
+            path="/solutions/:solutionId" 
+            element={
+              <SolutionPageWrapper 
+                onOpenContactModal={() => setIsContactModalOpen(true)} 
+              />
+            } 
+          />
+
+          {/* Catch-all redirect to Home */}
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
       </main>
 
-      {/* Site Footer */}
+      {/* Site Footer with Balanced Branding & Navigation Links */}
       <Footer
         onOpenLocationModal={() => setIsLocationModalOpen(true)}
-        onSelectCountry={(countrySlug) => navigateTo('location', countrySlug)}
-        onSelectSolution={(solId) => navigateTo('solution', solId)}
-        navigateTo={navigateTo}
+        onOpenContactModal={() => setIsContactModalOpen(true)}
       />
 
-      {/* Modals */}
+      {/* Accessible Modals */}
       <LocationSelectorModal
         isOpen={isLocationModalOpen}
         onClose={() => setIsLocationModalOpen(false)}
-        onSelectCountry={(countrySlug) => navigateTo('location', countrySlug)}
-        selectedRegionId={routeParam}
+        onSelectCountry={handleSelectCountry}
       />
 
       <ContactModal
@@ -190,9 +160,46 @@ export default function App() {
       <SearchModal
         isOpen={isSearchModalOpen}
         onClose={() => setIsSearchModalOpen(false)}
-        onSelectCountry={(countrySlug) => navigateTo('location', countrySlug)}
-        onSelectSolution={(solId) => navigateTo('solution', solId)}
+        onSelectCountry={handleSelectCountry}
+        onSelectSolution={handleSelectSolution}
       />
     </div>
+  );
+}
+
+// Wrapper for useParams with LocationPage
+import { useParams } from 'react-router-dom';
+
+function LocationPageWrapper({ onOpenContactModal }) {
+  const { countrySlug } = useParams();
+  const navigate = useNavigate();
+
+  return (
+    <LocationPage
+      countrySlug={countrySlug}
+      onBackToHome={() => navigate('/about#locations')}
+      onOpenContactModal={onOpenContactModal}
+    />
+  );
+}
+
+function SolutionPageWrapper({ onOpenContactModal }) {
+  const { solutionId } = useParams();
+  const navigate = useNavigate();
+
+  return (
+    <SolutionPage
+      solutionId={solutionId}
+      onBackToHome={() => navigate('/solutions')}
+      onOpenContactModal={onOpenContactModal}
+    />
+  );
+}
+
+export default function App() {
+  return (
+    <BrowserRouter>
+      <AppContent />
+    </BrowserRouter>
   );
 }

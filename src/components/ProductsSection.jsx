@@ -29,10 +29,17 @@ export default function ProductsSection({ onSelectProduct }) {
     },
     {
       id: 'tuya-scene-switch',
-      name: 'Tuya F3PRO Multifunctional LCD Scene Switch',
+      name: 'Tuya Smart LCD Scene & Rotary Dial Switches',
       category: 'automation',
-      desc: '3.5-inch touch LCD scene switch with 4 relay outputs, 8 scene bindings, 4 dimming channels, and Zigbee 3.0 mesh networking.',
-      image: '/images/smart_home.jpg'
+      desc: '3.5-inch touch LCD scene switch, 360° rotary thermostat knob (24.5°C), and 4-gang OLED relay panels with Zigbee 3.0 mesh.',
+      image: '/images/smart_tuya_rotary_switches.jpg'
+    },
+    {
+      id: 'modular-smart-switches-suite',
+      name: 'Modular Multi-Gang Wall Switch & Socket Suite',
+      category: 'automation',
+      desc: 'Architectural continuous flush wall plates in 6 finishes with rotary climate knob, universal safety socket, and digital time screens.',
+      image: '/images/smart_switches_wall.jpg'
     },
     {
       id: 'anpr-barrier-system',

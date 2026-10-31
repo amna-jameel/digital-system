@@ -31,28 +31,85 @@
 }
 
 .footer-brand {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 0.75rem;
   text-decoration: none;
-  color: #ffffff;
-  margin-bottom: 1rem;
+  margin-bottom: 1.25rem;
+  transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
-.footer-brand .brand-name {
-  font-family: var(--font-heading);
-  font-size: 1.25rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  color: #ffffff;
+.footer-brand:hover {
+  opacity: 0.92;
+  transform: translateY(-1px);
+}
+
+.footer-metrisys-logo {
+  height: 52px;
+  width: auto;
+  max-width: 190px;
+  object-fit: contain;
+  display: block;
 }
 
 .footer-tagline {
   font-size: 0.8125rem;
   line-height: 1.65;
   color: #94a3b8;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.25rem;
   max-width: 320px;
+}
+
+/* Parent Company Identity in Footer */
+.footer-parent-badge {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  margin-bottom: 1.5rem;
+  padding: 0.75rem 1rem;
+  background: rgba(14, 19, 31, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-sm);
+  max-width: 320px;
+}
+
+.footer-parent-eyebrow {
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #00d2ff;
+}
+
+.footer-parent-lockup {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.footer-parent-logo-img {
+  height: 36px;
+  width: auto;
+  max-width: 52px;
+  object-fit: contain;
+  display: block;
+  flex-shrink: 0;
+}
+
+.footer-parent-info {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+}
+
+.footer-parent-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.04em;
+}
+
+.footer-parent-sub {
+  font-size: 0.65rem;
+  color: #94a3b8;
 }
 
 .footer-global-pill {
@@ -142,6 +199,25 @@
   color: #ffffff;
   font-weight: 500;
   margin-bottom: 0.75rem;
+}
+
+.footer-contact-btn {
+  background: rgba(0, 210, 255, 0.08);
+  border: 1px solid rgba(0, 210, 255, 0.25);
+  color: #00d2ff;
+  font-size: 0.775rem;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 0.25rem;
+  text-align: left;
+}
+
+.footer-contact-btn:hover {
+  background: rgba(0, 210, 255, 0.16);
+  border-color: #00d2ff;
 }
 
 .footer-bottom-bar {

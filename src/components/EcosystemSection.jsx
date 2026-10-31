@@ -66,6 +66,23 @@ export default function EcosystemSection() {
           <p className="section-subtitle">
             AI, security, automation and intelligent infrastructure — seamlessly unified.
           </p>
+
+          {/* Subtle & Professional Parent Company Identity */}
+          <div className="about-parent-endorsement">
+            <div className="parent-endorsement-inner">
+              <img 
+                src="/images/unique-future-logo.png" 
+                alt="Unique Future Digital Systems" 
+                className="parent-endorsement-logo"
+              />
+              <div className="parent-endorsement-text">
+                <span className="parent-endorsement-tag">AN ENTERPRISE DIVISION OF UNIQUE FUTURE DIGITAL SYSTEMS</span>
+                <p className="parent-endorsement-desc">
+                  Metrisys operates as the core computer vision and artificial intelligence technology brand of <strong>Unique Future Digital Systems</strong>, engineering advanced neural video analytics and smart infrastructure across the UAE, Saudi Arabia, Oman, and Pakistan.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Visual 3-in-a-row Grid */}

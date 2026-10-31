@@ -1,0 +1,102 @@
+/* Solutions Page Styles */
+.solutions-page {
+  padding-bottom: 2rem;
+}
+
+.solutions-hero-section {
+  padding: 8.5rem 0 3.5rem 0;
+  background: radial-gradient(circle at 50% 20%, rgba(0, 210, 255, 0.08) 0%, rgba(7, 9, 14, 0.98) 75%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.solutions-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  margin-bottom: 2rem;
+}
+
+.breadcrumb-link {
+  color: var(--text-dark-muted, #64748b);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.breadcrumb-link:hover {
+  color: #00d2ff;
+}
+
+.breadcrumb-sep {
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.breadcrumb-current {
+  color: #00d2ff;
+  font-weight: 500;
+}
+
+.solutions-page-title {
+  font-size: clamp(2.2rem, 4.5vw, 3.4rem);
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.15;
+  margin-bottom: 1.5rem;
+  max-width: 900px;
+}
+
+.solutions-page-sub {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: var(--text-dark-secondary, #94a3b8);
+  max-width: 820px;
+  margin-bottom: 2.5rem;
+}
+
+/* Sticky / Smooth Anchor Pill Navigation */
+.solutions-anchor-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.anchor-pill {
+  background: rgba(15, 23, 42, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #cbd5e1;
+  padding: 0.55rem 1.1rem;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.anchor-pill:hover {
+  background: rgba(0, 210, 255, 0.1);
+  border-color: rgba(0, 210, 255, 0.35);
+  color: #00d2ff;
+}
+
+.anchor-pill.active {
+  background: rgba(0, 210, 255, 0.15);
+  border-color: #00d2ff;
+  color: #00d2ff;
+  font-weight: 600;
+  box-shadow: 0 0 12px rgba(0, 210, 255, 0.25);
+}
+
+/* Individual Anchored Sections */
+.solution-section-anchor {
+  scroll-margin-top: 80px;
+  position: relative;
+}
+
+.solution-section-anchor:not(:last-child) {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
